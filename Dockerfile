@@ -4,7 +4,7 @@ RUN mkdir /app
 ADD . /app
 WORKDIR /app
 
-RUN CGO_ENABLED=1 GOOS=linux go build -o tethys cmd/sever/main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -o tethys cmd/sever/main.go
 
 FROM alpine:latest AS production
 
